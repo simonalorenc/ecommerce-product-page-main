@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root{
+    --color-background: white;
+    --color-title: black;
+    --color-text: hsl(219, 9%, 45%);
+    --color-text-accent: hsl(26, 100%, 55%);
+    --color-background-accent: hsl(25, 100%, 94%);
+    --color-background-second-accent: hsl(233, 33%, 95%);
+    --color-text-crossed: hsl(228, 16%, 82%);
+}
+
+// - Orange: hsl(26, 100%, 55%)
+// - Pale orange: hsl(25, 100%, 94%)
+// - Very dark blue: hsl(220, 13%, 13%)
+// - Dark grayish blue: hsl(219, 9%, 45%)
+// - Grayish blue: hsl(220, 14%, 75%)
+// - Light grayish blue: hsl(223, 64%, 98%)
+// - White: hsl(0, 0%, 100%)
+// - Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
+
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.all{
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: 0px 50px;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    justify-content: space-between;
+    border-bottom: solid 1px var(--color-text);
+
+    & &__text{
+        display: flex;
+    }
+
+    & &__logo{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding-right: 50px;
+    }
+
+    & &__menu{
+        display: flex;
+        align-items: center;
+    }
+
+    & &__menu-option{
+        padding: 10px;
+        color: var(--color-text);
+    }
+
+    & &__icons{
+        display: flex;
+        align-items: center;
+    }
+
+    & &__shopping-icon{
+        display: flex;
+        padding-right: 30px;
+    }
+
+    & &__logo-icon{
+        width: 40px;
+        height: 40px;
+        background-image: url(images/image-avatar.png);
+        background-size: contain;
+    }
+}
+
+.main{
+    display: flex;
+}
+
+.photo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 70px 50px 40px 40px;
+    
+    & &__small{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.big{
+    max-width: 100%;
+    height: auto;
+}
+
+.small{
+    max-width: 25%;
+    height: auto;
+}
+
+.main-component{
+    display: flex;
+    flex-direction: column;
+    padding: 70px 40px 40px 50px;
+
+    & &__company-name{
+        color: var(--color-text-accent);
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1mm;
+        font-size: 14px;
+    }
+
+    & &__title{
+        margin-top: 20px;
+        color: var(--color-title);
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    & &__text{
+        margin-top: 40px;
+        color: var(--color-text);
+        line-height: 0.7cm;
+    }
+
+    & &__price{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    & &__price-sale{
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    & &__price-discount{
+        width: 60px;
+        height: 22px;
+        background-color: var(--color-background-accent);
+        color: var(--color-text-accent);
+        font-weight: 700;
+        font-size: 18px;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    & &__regular{
+        color: var(--color-text-crossed);
+        font-weight: 700;
+        text-decoration: line-through;
+        margin-top: 10px;
+    }
+}
+
+.cart{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 45px;
+}
+
+.cart-options{
+    display: flex;
+    width: 40%;
+    background-color: var(--color-background-second-accent);
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-around;
+
+   & &__number{
+    font-weight: 700;
+    font-size: 18px;
+   }
+
+   & &__add{
+    display: flex;
+    background-color: var(--color-background-accent);
+   }
+}
