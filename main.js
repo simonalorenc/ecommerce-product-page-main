@@ -77,9 +77,25 @@ smallPhotos.forEach(smallPhoto => smallPhoto.addEventListener('click', () => {
     })
 )
 
+const slidesContainer = document.querySelector('.photo__small')
+const slides = [...slidesContainer.children]
+const slidesArray = Array.from(slides).map(slide => slide.src)
+
+function currentIndexOfPhoto() {
+    const activeSlide = document.querySelector('.big')
+    const bigSlide = activeSlide.src
+    let currentIndex = slidesArray.indexOf(bigSlide)
+    return currentIndex
+}
+
 arrowNext.addEventListener('click', () => {
-    const bigImage = document.querySelector('.big')
-    //tablica ze zdjeciami
-    console.log(bigImage)
-    console.log('arrow next clicked')
+    let activeSlide = document.querySelector('.big')
+    let index = currentIndexOfPhoto() + 1
+    activeSlide.src = slidesArray[index]
+    if (index > 3) {
+        index = 0
+        activeSlide.src = slidesArray[index]
+    }
 })
+
+
