@@ -10,15 +10,6 @@
     --color-text-crossed: hsl(228, 16%, 82%);
 }
 
-// - Orange: hsl(26, 100%, 55%)
-// - Pale orange: hsl(25, 100%, 94%)
-// - Very dark blue: hsl(220, 13%, 13%)
-// - Dark grayish blue: hsl(219, 9%, 45%)
-// - Grayish blue: hsl(220, 14%, 75%)
-// - Light grayish blue: hsl(223, 64%, 98%)
-// - White: hsl(0, 0%, 100%)
-// - Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
-
 body{
     font-family: 'Kumbh Sans', sans-serif;
     background-color: var(--color-background);
@@ -51,6 +42,7 @@ body{
     height: 100px;
     justify-content: space-between;
     border-bottom: solid 1px var(--color-text);
+    position: relative;
 
     & &__text{
         display: flex;
@@ -332,7 +324,7 @@ body{
     background-color: var(--color-background);
     top: 45%;
     right: 20px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .arrow-previous{
@@ -347,11 +339,59 @@ body{
     background-color: var(--color-background);
     top: 45%;
     left: 20px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .selected-photo{
     border: solid 4px orange;
     background-color: rgba(255, 255, 255, 0.95);
     z-index: 1;
+}
+
+.mobile-menu{
+    background-color: var(--color-background);
+    width: 20vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding-top: 100px;
+    z-index: 1;
+}
+
+.close-menu{
+    height: 25px;
+    width: 25px;
+    background-image: url(images/icon-close.svg);
+    background-size: cover;
+    margin-right: 20px;
+    position: absolute;
+    left: 0px;
+    top: 35px;
+}
+
+.popup {
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.popup.hidden{
+    display: none;
+}
+
+.popup img {
+    max-height: 60%;
+    max-width: 60%;
+    position: relative;
 }
