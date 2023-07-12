@@ -142,6 +142,7 @@ arrowPrevious.addEventListener('click', () => {
 
 const popup = document.querySelector('.popup')
 const bigPhoto = document.querySelector('.big')
+const closeSign = document.querySelector('.close')
 
 const arrowNextPopup = document.createElement('div')
 arrowNextPopup.classList.add('arrow-next')
@@ -149,6 +150,7 @@ const arrowPreviousPopup = document.createElement('div')
 arrowPreviousPopup.classList.add('arrow-previous')
 
 const activePopupPhoto = document.querySelector('.popup-big')
+console.log(activePopupPhoto.src)
 
 function addArrowsForPopup() {
     popup.appendChild(arrowNextPopup)
@@ -156,8 +158,17 @@ function addArrowsForPopup() {
 }
 
 bigPhoto.addEventListener('click', () => {
+    const selectedPhoto = document.querySelector('.selected-photo')
+    console.log(selectedPhoto)
+    activePopupPhoto.src = selectedPhoto.src
     popup.classList.remove('hidden')
     addArrowsForPopup()
+    closeSign.classList.remove('hidden')
+})
+
+closeSign.addEventListener('click', () => {
+    popup.classList.add('hidden')
+    closeSign.classList.add('hidden')
 })
 
 arrowNextPopup.addEventListener('click', () => {
@@ -176,11 +187,9 @@ arrowPreviousPopup.addEventListener('click', () => {
     let currentIndex = slidesArray.indexOf(bigPopupPhoto)
     console.log(currentIndex)
     let index = currentIndex - 1
-    console.log(index)
     if (index < 0) {
         index = 3
         activePopupPhoto.src = slidesArray[index]
-        console.log(index)
     }
     activePopupPhoto.src = slidesArray[index]
 })
