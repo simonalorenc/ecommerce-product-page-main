@@ -395,9 +395,10 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 
-.popup.hidden {
+.hidden {
   display: none;
 }
 
@@ -419,6 +420,97 @@ body {
   right: 250px;
 }
 
-.close.hidden {
-  display: none;
+.cart-preview {
+  background-color: var(--color-background);
+  box-shadow: 0px 20px 51px -9px #bebebe;
+  width: 300px;
+  min-height: 180px;
+  position: absolute;
+  z-index: 1;
+  top: 90px;
+  right: 20px;
+}
+
+.cart-preview .cart-preview__title {
+  justify-content: start;
+  height: 30px;
+  font-weight: 700;
+  padding: 10px 0px 0px 20px;
+  border-bottom: solid 0.5px var(--color-text);
+}
+
+.cart-preview .cart-preview__items {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.cart-preview .cart-preview__empty {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.cart-preview .cart-preview__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  margin: 15px 15px 0px 15px;
+}
+
+.cart-preview .cart-preview__item-img {
+  width: auto;
+  height: 42px;
+  border-radius: 5px;
+}
+
+.cart-preview .cart-preview__item-text {
+  display: flex;
+  height: 42px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.cart-preview .cart-preview__item-text-title {
+  font-size: 12.5px;
+  color: var(--color-text);
+}
+
+.cart-preview .cart-preview__item-text-numbers {
+  display: flex;
+}
+
+.cart-preview .cart-preview__item-text-numbers-price {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.cart-preview .cart-preview__item-text-numbers-sum {
+  font-size: 14px;
+  margin-left: 20px;
+  font-weight: 700;
+}
+
+.cart-preview .cart-preview__item-delete {
+  width: 16px;
+  height: 16px;
+  background-image: url(images/icon-delete.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cart-preview .cart-preview__checkout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 42px;
+  display: flex;
+  background-color: var(--color-text-accent);
+  border-radius: 8px;
+  margin: 20px;
+  color: var(--color-background);
+  font-weight: 700;
 }

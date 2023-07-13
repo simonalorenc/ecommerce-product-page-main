@@ -157,14 +157,31 @@ function addArrowsForPopup() {
     popup.appendChild(arrowPreviousPopup)
 }
 
-bigPhoto.addEventListener('click', () => {
+const addPopup = () => {
     const selectedPhoto = document.querySelector('.selected-photo')
-    console.log(selectedPhoto)
-    activePopupPhoto.src = selectedPhoto.src
-    popup.classList.remove('hidden')
-    addArrowsForPopup()
-    closeSign.classList.remove('hidden')
-})
+        activePopupPhoto.src = selectedPhoto.src
+        popup.classList.remove('hidden')
+        addArrowsForPopup()
+        closeSign.classList.remove('hidden')
+}
+
+const avaliablePopup = () => {
+    bigPhoto.addEventListener('click', addPopup)
+}
+
+const unavaliablePopup = () => {
+    bigPhoto.removeEventListener('click', addPopup)
+}
+
+function checkPopup() {
+    if(window.innerWidth >= 650) {
+        avaliablePopup()
+    } else {
+        unavaliablePopup()
+    }
+}
+
+window.addEventListener('resize', checkPopup)
 
 closeSign.addEventListener('click', () => {
     popup.classList.add('hidden')
@@ -193,5 +210,37 @@ arrowPreviousPopup.addEventListener('click', () => {
     }
     activePopupPhoto.src = slidesArray[index]
 })
+
+const cartIcon = document.querySelector('.header__shopping-icon img')
+const cartPreview = document.querySelector('.cart-preview')
+
+cartIcon.addEventListener('click', () => {
+    cartPreview.classList.remove('hidden')
+})
+
+const minusItem = document.querySelector('.minus')
+const plusItem = document.querySelector('.plus')
+const numberOfItems = document.querySelector('.cart-options__number')
+const addToCartBtn = document.querySelector('.cart__add')
+console.log(addToCartBtn)
+
+let number = 0
+
+const addItem = () => {
+    number++
+    numberOfItems.innerHTML = number
+    console.log('clicked')
+}
+
+plusItem.addEventListener('click', addItem)
+
+const subtractItem = () => {
+    if (number > 0) {
+        number--
+        numberOfItems.innerHTML = number
+    }
+}
+
+minusItem.addEventListener('click', subtractItem)
 
 
