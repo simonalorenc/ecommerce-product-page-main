@@ -487,6 +487,11 @@ body {
   color: var(--color-text);
 }
 
+.cart-preview .cart-preview__item-text-numbers-amount {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
 .cart-preview .cart-preview__item-text-numbers-sum {
   font-size: 14px;
   margin-left: 20px;

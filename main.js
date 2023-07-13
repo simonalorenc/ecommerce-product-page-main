@@ -222,14 +222,12 @@ const minusItem = document.querySelector('.minus')
 const plusItem = document.querySelector('.plus')
 const numberOfItems = document.querySelector('.cart-options__number')
 const addToCartBtn = document.querySelector('.cart__add')
-console.log(addToCartBtn)
 
 let number = 0
 
 const addItem = () => {
     number++
     numberOfItems.innerHTML = number
-    console.log('clicked')
 }
 
 plusItem.addEventListener('click', addItem)
@@ -242,5 +240,27 @@ const subtractItem = () => {
 }
 
 minusItem.addEventListener('click', subtractItem)
+
+const numberOfItemsInCart = document.querySelector('.cart-preview__item-text-numbers-amount')
+const priceOfItemInCart = document.querySelector('.cart-preview__item-text-numbers-price')
+const sumPrice = document.querySelector('.cart-preview__item-text-numbers-sum')
+const priceOfItem = document.querySelector('.main-component__price-sale')
+
+addToCartBtn.addEventListener('click', () => {
+    console.log(priceOfItem.innerHTML)
+    console.log(priceOfItemInCart.innerHTML)
+    let currentNumber = parseInt(numberOfItems.innerHTML)
+    numberOfItemsInCart.innerHTML ='x ' + currentNumber
+    let priceString = priceOfItem.innerHTML
+    priceOfItemInCart.innerHTML = priceString + ' '
+    let priceNumber = priceString.replace(/[^0-9.-]+/g, '')
+    let result = '$' + priceNumber * currentNumber
+    sumPrice.innerHTML = result
+})
+    
+
+
+
+
 
 
