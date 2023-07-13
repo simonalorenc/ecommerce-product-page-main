@@ -16,6 +16,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0;
+  height: 100vh;
 }
 
 .all {
@@ -63,11 +64,21 @@ body {
 .header .header__menu {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .header .header__menu-option {
-  padding: 18px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 18px;
   color: var(--color-text);
+}
+
+.header .header__menu-option:hover {
+  cursor: pointer;
+  color: black;
+  border-bottom: solid 5px var(--color-text-accent);
 }
 
 .header .header__icons {
@@ -80,11 +91,33 @@ body {
   padding-right: 30px;
 }
 
+.header .header__shopping-icon:hover {
+  cursor: pointer;
+}
+
 .header .header__logo-icon {
   width: 40px;
   height: 40px;
   background-image: url(images/image-avatar.png);
   background-size: contain;
+}
+
+.header .header__logo-icon:hover {
+  cursor: pointer;
+  box-sizing: border-box;
+  border: solid 4px var(--color-text-accent);
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 1220px) {
+  .header .header__menu {
+    display: none;
+    height: 100vh;
+  }
+  .header .header__menu-option {
+    padding-top: 18px;
+    height: unset;
+  }
 }
 
 @media only screen and (max-width: 650px) {
@@ -96,6 +129,7 @@ body {
   }
   .header .header__menu {
     display: none;
+    height: 100vh;
   }
 }
 
@@ -121,10 +155,18 @@ body {
   position: relative;
 }
 
+.photo .photo__big:hover {
+  cursor: pointer;
+}
+
 .photo .photo__small {
   display: flex;
   flex-direction: row;
   max-width: 570px;
+}
+
+.photo .photo__small:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1220px) {
@@ -268,6 +310,11 @@ body {
   box-shadow: 0px 20px 51px -9px #dfab8d;
 }
 
+.cart .cart__add:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 .cart .cart__text {
   color: var(--color-background);
   margin-left: 10px;
@@ -315,12 +362,34 @@ body {
   }
 }
 
+.plus {
+  padding: 10px;
+}
+
+.plus:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.minus {
+  padding: 10px;
+}
+
+.minus:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 .hamburger-logo {
   height: 25px;
   width: 25px;
   background-image: url(images/icon-menu.svg);
   background-size: cover;
   margin-right: 20px;
+}
+
+.hamburger-logo:hover {
+  cursor: pointer;
 }
 
 .arrow-next {
@@ -338,6 +407,10 @@ body {
   z-index: 2;
 }
 
+.arrow-next:hover {
+  cursor: pointer;
+}
+
 .arrow-previous {
   position: absolute;
   width: 30px;
@@ -353,10 +426,14 @@ body {
   z-index: 2;
 }
 
+.arrow-previous:hover {
+  cursor: pointer;
+}
+
 .selected-photo {
   border: solid 4px orange;
   background-color: rgba(255, 255, 255, 0.95);
-  z-index: 1;
+  opacity: 0.5;
 }
 
 .mobile-menu {
@@ -382,6 +459,10 @@ body {
   position: absolute;
   left: 0px;
   top: 35px;
+}
+
+.close-menu:hover {
+  cursor: pointer;
 }
 
 .popup {
@@ -418,6 +499,10 @@ body {
   font-size: 45px;
   top: 120px;
   right: 250px;
+}
+
+.close:hover {
+  cursor: pointer;
 }
 
 .cart-preview {

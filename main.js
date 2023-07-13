@@ -1,3 +1,5 @@
+const body = document.body
+
 const headerMenu = document.querySelector('.header__menu')
 const header = document.querySelector('.header__text')
 
@@ -103,8 +105,7 @@ smallPhotos.forEach(smallPhoto => smallPhoto.addEventListener('click', () => {
     smallPhoto.classList.add('selected-photo')
     const bigImage = document.querySelector('.big')
     const selectedImage = document.querySelector('.selected-photo')
-    console.log(selectedImage.src)
-    const newSelectedImage = selectedImage.src
+    // const newSelectedImage = selectedImage.src
     bigImage.src = selectedImage.src
     })
 )
@@ -179,6 +180,9 @@ function checkPopup() {
     } else {
         unavaliablePopup()
     }
+}
+if (window.innerWidth >= 650) {
+    avaliablePopup()
 }
 
 window.addEventListener('resize', checkPopup)
@@ -256,8 +260,44 @@ addToCartBtn.addEventListener('click', () => {
     let priceNumber = priceString.replace(/[^0-9.-]+/g, '')
     let result = '$' + priceNumber * currentNumber
     sumPrice.innerHTML = result
+    if (numberOfItems.innerHTML !== '0') {
+        cartFilled.classList.remove('hidden')
+        cartEmpty.classList.add('hidden')
+    }
 })
-    
+
+const cartEmpty = document.querySelector('.cart-preview__empty')
+const cartFilled = document.querySelector('.cart-preview__filled')
+
+if (numberOfItems.innerHTML === '0') {
+    cartFilled.classList.add('hidden')
+    cartEmpty.classList.remove('hidden')
+}  
+
+const deleteItem = document.querySelector('.cart-preview__item-delete')
+
+deleteItem.addEventListener('click', () => {
+    cartFilled.classList.add('hidden')
+    cartEmpty.classList.remove('hidden')
+    numberOfItems.innerHTML = 0
+})
+
+function closeCart(event) {
+    if (!cartPreview.classList.contains('hidden') &&
+        !cartPreview.contains(event.target)) {
+            cartPreview.classList.add('hidden')
+    }
+}
+
+window.addEventListener('click', () => {
+    if (!cartPreview.classList.contains('hidden')) {
+        body.addEventListener('click', closeCart)
+    } else {
+        body.removeEventListener('click', closeCart)
+    }
+})
+
+
 
 
 
