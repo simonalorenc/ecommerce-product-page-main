@@ -92,6 +92,22 @@ body{
         cursor: pointer;
     }
 
+    & &__shopping-icon-number{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        background-color: var(--color-text-accent);
+        border-radius: 50%;
+        position: absolute;
+        top: 28px;
+        right: 60px;
+        color: var(--color-background);
+        font-weight: 700;
+        font-size: 13px;
+    }
+
     & &__logo-icon{
         width: 40px;
         height: 40px;
@@ -227,7 +243,7 @@ body{
     }
 
     & &__text{
-        margin-top: 40px;
+        margin: 40px 20px 0px 20px;
         color: var(--color-text);
         line-height: 0.7cm;
     }
@@ -285,7 +301,7 @@ body{
 }
 
 .cart{
-    margin-top: 50px;
+    margin: 50px 20px 0px 20px;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -296,7 +312,7 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 60%;
+        width: 55%;
         display: flex;
         background-color: var(--color-text-accent);
         border-radius: 8px;

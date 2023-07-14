@@ -249,6 +249,8 @@ const numberOfItemsInCart = document.querySelector('.cart-preview__item-text-num
 const priceOfItemInCart = document.querySelector('.cart-preview__item-text-numbers-price')
 const sumPrice = document.querySelector('.cart-preview__item-text-numbers-sum')
 const priceOfItem = document.querySelector('.main-component__price-sale')
+const numberOfItemsPreview = document.createElement('div')
+numberOfItemsPreview.classList.add('header__shopping-icon-number')
 
 addToCartBtn.addEventListener('click', () => {
     console.log(priceOfItem.innerHTML)
@@ -264,6 +266,8 @@ addToCartBtn.addEventListener('click', () => {
         cartFilled.classList.remove('hidden')
         cartEmpty.classList.add('hidden')
     }
+    numberOfItemsPreview.innerHTML = currentNumber
+    header.appendChild(numberOfItemsPreview)
 })
 
 const cartEmpty = document.querySelector('.cart-preview__empty')
@@ -280,6 +284,9 @@ deleteItem.addEventListener('click', () => {
     cartFilled.classList.add('hidden')
     cartEmpty.classList.remove('hidden')
     numberOfItems.innerHTML = 0
+    if (header.contains(numberOfItemsPreview)) {
+        header.removeChild(numberOfItemsPreview)
+    }
 })
 
 function closeCart(event) {
