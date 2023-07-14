@@ -105,7 +105,6 @@ smallPhotos.forEach(smallPhoto => smallPhoto.addEventListener('click', () => {
     smallPhoto.classList.add('selected-photo')
     const bigImage = document.querySelector('.big')
     const selectedImage = document.querySelector('.selected-photo')
-    // const newSelectedImage = selectedImage.src
     bigImage.src = selectedImage.src
     })
 )
@@ -179,6 +178,7 @@ function checkPopup() {
         avaliablePopup()
     } else {
         unavaliablePopup()
+        popup.classList.add('hidden')
     }
 }
 if (window.innerWidth >= 650) {
